@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Domain and IP Monitor",
+  "version": "1.0",
+  "description": "Monitors domain requests for the current tab and displays their IPs.",
+  "permissions": [
+    "webRequest",
+    "activeTab",
+    "storage",
+    "dns"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
