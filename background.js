@@ -35,7 +35,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       Promise.all(requestDomains[tabId].map(domain => {
         return new Promise(resolve => {
           chrome.dns.resolve(domain, (result) => {
-            console.log('dns result');
             console.log(result);
             const ip = result && result.address ? result.address : 'N/A';
             domainsWithIps.push({ domain: domain, ip: ip });
